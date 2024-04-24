@@ -19,7 +19,7 @@ body, html {
 }
 
 #sobre {
-    max-width: 50%; /* Reducido para evitar que sea demasiado grande */
+    max-width: 70%; /* Reducido para evitar que sea demasiado grande */
     cursor: pointer;
     transition: transform 0.2s;
 }
