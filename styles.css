@@ -1,0 +1,118 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#sobreContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+#sobre {
+    max-width: 90%; /* Ajuste para que el sobre no sea demasiado grande en pantallas grandes */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#sobre:hover {
+    transform: scale(1.05);
+}
+
+#invitacion {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; /* Asegúrate de que se pueda desplazar para ver todo el contenido */
+    background-color: #fff;
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinea el contenido desde la parte superior */
+}
+
+.section {
+    width: 90%; /* Ajusta este valor según sea necesario para controlar el ancho de las secciones */
+    max-width: 500px; /* Un máximo razonable para legibilidad en dispositivos más grandes */
+    border: 1px solid #ccc;
+    margin: 20px 0; /* Margen vertical para separar secciones */
+    padding: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Opcional: añade sombra para mejor separación visual */
+    text-align: center; /* Centra el texto dentro de cada sección */
+}
+
+#rsvp-form {
+    margin-top: 20px;
+    text-align: center; /* Centra los elementos del formulario */
+}
+
+#name-form-container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+#name-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#name-form input, #name-form button {
+    margin: 10px;
+    padding: 8px;
+    font-size: 16px;
+    width: auto; /* Ajusta automáticamente el ancho según el contenido */
+}
+
+@keyframes dropAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.drop-in {
+    animation: dropAnimation 0.5s ease-out forwards;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los recuadros */
+}
+
+.countdown-box {
+    background-color: #fff; /* Fondo blanco o elige otro color que complemente tu diseño */
+    padding: 10px 20px; /* Espaciado interno */
+    border: 2px solid #c20000; /* Borde rojo para combinar con el tema de la invitación */
+    border-radius: 5px; /* Bordes redondeados */
+    display: inline-block;
+    font-size: 2em; /* Tamaño grande para los números */
+    color: #c20000; /* Color del texto */
+}
+
+.countdown-label {
+    display: block; /* Asegura que la etiqueta esté debajo del número */
+    font-size: 0.5em; /* Tamaño más pequeño para las etiquetas */
+    color: #666; /* Color más suave para las etiquetas */
+}

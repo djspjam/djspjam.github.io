@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Quince Años</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML.
+    </audio>
+    
+    <div id="name-form-container">
+        <form id="name-form">
+            <label for="user-name">Escribe tu nombre para abrir la invitación:</label>
+            <input type="text" id="user-name" name="user-name" required>
+            <button type="submit">Abrir Invitación</button>
+        </form>
+    </div>
+    <div id="sobreContainer" style="display: none;">
+        <img id="sobre" src="images/sobre.png" alt="Abrir Invitación" onclick="mostrarInvitacion()">
+    </div>
+    <div id="invitacion" class="scroll-sections" style="display: none;">
+        <img src="images/image1.png" alt="Invitación Principal" onclick="cerrarInvitacion()">
+        <div class="section" id="salon-details">
+            <h2 class="drop-in">Salón Le Crillon</h2>
+            <img src="images/image4.png" alt="Salón Le Crillon">
+            <p>Descubre más sobre el lugar de nuestro evento en <a href="https://maps.app.goo.gl/eUW2tHMKaRQnA58j9" target="_blank">Google Maps</a>.</p>
+        </div>
+        <!-- El resto de las secciones continúan aquí -->
+        <div class="section" id="event-details">
+            <h2 class="drop-in">Lugar y Fecha del Evento</h2>
+            <p>Misa: Salon Le Crillon, 24 de mayo de 2024 a las 7:00 PM</p>
+            <div id="misa-countdown">Cargando contador...</div>
+            <p>Recepción: Salon Le Crillon, 24 de mayo de 2024 a las 8:00 PM</p>
+            <div id="recepcion-countdown">Cargando contador...</div>
+        </div>
+        <div class="section" id="personalize-invitation">
+            <h2 id="personalized-name"></h2>
+            <form id="rsvp-form">
+                <label for="guest-name">Tu nombre:</label>
+                <input type="text" id="guest-name" name="guest-name">
+                <label for="guests-number">Número de asistentes:</label>
+                <select name="guests-number" id="guests-number">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <button type="submit">Confirmar</button>
+            </form>
+        </div>
+        <div class="section" id="dress-code">
+            <h2>Código de Vestimenta Formal</h2>
+            <img src="images/image2.png" alt="Código de Vestimenta">
+        </div>
+        <div class="section" id="share-pics">
+            <h2>Comparte tus imágenes aquí</h2>
+            <img src="images/image3.png" alt="Código QR">
+        </div>
+        <div class="section" id="thanks">
+            <h2>Gracias por acompañarnos en nuestro evento</h2>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
