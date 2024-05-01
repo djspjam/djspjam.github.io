@@ -1,0 +1,122 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Comfortaa', Arial, sans-serif; /* Asegúrate de incluir la fuente desde Google Fonts */
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#sobreContainer, #name-form-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+#sobre {
+    max-width: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#sobre:hover {
+    transform: scale(1.05);
+}
+
+#invitacion {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #fff;
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section {
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+img.responsive-image, img.event-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.event-title, .event-date {
+    font-size: 1.5rem; /* Ajustado para mejor lectura */
+    font-weight: 600;
+    margin-top: 10px;
+    color: #333; /* Asegurando buen contraste */
+}
+
+#rsvp-form, #name-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#name-form input, #name-form button {
+    width: 90%;
+    margin: 5px;
+    padding: 10px;
+    font-size: 1.2rem; /* Más grande para facilitar la interacción */
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.countdown-box {
+    padding: 8px 16px;
+    font-size: 1.5rem; /* Aumentado para visibilidad */
+}
+
+.carousel {
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel .slides img {
+    width: 100%;
+    display: none;
+    transition: opacity 1s ease;
+}
+
+.carousel .slides img:first-child {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .section, #name-form input, #name-form button {
+        max-width: 95%;
+    }
+    .countdown-box, .event-title, .event-date {
+        font-size: 1rem; /* Ajustado para pantallas pequeñas */
+    }
+}
