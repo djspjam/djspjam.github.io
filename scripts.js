@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const invitacion = document.getElementById('invitacion');
     const userNameInput = document.getElementById('user-name');
     const personalizedElement = document.getElementById('personalized-name');
-    const sectionHeaders = document.querySelectorAll('.section h2'); // Pre-select for performance
+    const rsvpForm = document.getElementById('rsvp-form');
+    const guestsNumberSelect = document.getElementById('guests-number');
 
     nameForm.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function applyDropInAnimation() {
-        sectionHeaders.forEach(element => element.classList.add('drop-in'));
+        document.querySelectorAll('.section h2').forEach(element => element.classList.add('drop-in'));
     }
 
     function updateCountdown() {
@@ -63,18 +64,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showSlides() {
         let slides = document.querySelectorAll('.carousel .slides img');
-        slides.forEach(slide => slide.style.display = "none");
-        slideIndex = (slideIndex + 1) % slides.length;
-        slides[slideIndex].style.display = "block";
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
         setTimeout(showSlides, 5000); // Change image every 5 seconds
     }
 
-        rsvpForm.addEventListener('submit', function(event) {
+    rsvpForm.addEventListener('submit', function(event) {
         event.preventDefault();
         const guestsNumber = guestsNumberSelect.value;
         const whatsappMessage = `Hola, se confirman ${guestsNumber} asistentes.`;
         const encodedMessage = encodeURIComponent(whatsappMessage);
         const whatsappUrl = `https://wa.me/+525548528300?text=${encodedMessage}`;
+        
+        window.open(whatsappUrl, '_blank');
+    });
+});
+
         
         window.open(whatsappUrl, '_blank');
     });
