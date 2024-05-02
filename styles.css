@@ -120,3 +120,24 @@ img.responsive-image, img.event-image {
         font-size: 1rem; /* Ajustado para pantallas pequeñas */
     }
 }
+#audio-control {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    z-index: 1500;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+#audio-control:hover {
+    background-color: #0056b3;
+}
