@@ -68,4 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
         slides[slideIndex].style.display = "block";
         setTimeout(showSlides, 5000); // Change image every 5 seconds
     }
-});
+
+        rsvpForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const guestsNumber = guestsNumberSelect.value;
+        const whatsappMessage = `Hola, se confirman ${guestsNumber} asistentes.`;
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        const whatsappUrl = `https://wa.me/+525548528300?text=${encodedMessage}`;
+        
+        window.open(whatsappUrl, '_blank');
+    });
