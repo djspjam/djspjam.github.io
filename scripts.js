@@ -83,7 +83,3 @@ document.addEventListener('DOMContentLoaded', function() {
         window.open(whatsappUrl, '_blank');
     });
 });
-
-        
-        window.open(whatsappUrl, '_blank');
-    });
