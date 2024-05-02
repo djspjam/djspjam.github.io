@@ -8,7 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <audio autoplay loop>
+    <button id="audio-control" onclick="toggleAudio()" style="position: fixed; bottom: 20px; right: 20px; z-index: 1500; border: none; background-color: #007BFF; color: white; border-radius: 50%; width: 50px; height: 50px;">▶️/⏸️</button>
+
+    <audio id="background-audio" autoplay loop>
         <source src="music.mp3" type="audio/mpeg">
         Tu navegador no soporta audio HTML.
     </audio>
@@ -87,6 +89,8 @@
                 <img src="image6.png" alt="Image 6" style="display: block;">
                 <img src="image7.png" alt="Image 7">
                 <img src="image8.png" alt="Image 8">
+                <img src="image9.png" alt="Image 9">
+                <img src="image10.png" alt="Image 10">               
             </div>
         </div>
     </div>
