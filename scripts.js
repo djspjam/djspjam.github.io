@@ -2,6 +2,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const misaDate = new Date('May 24, 2024 19:00:00').getTime();
     const recepcionDate = new Date('May 24, 2024 20:00:00').getTime();
 
+        const audioElement = document.getElementById('background-audio');
+    const audioButton = document.getElementById('audio-control');
+
+    audioButton.addEventListener('click', function() {
+        if (audioElement.paused) {
+            audioElement.play();
+            audioButton.textContent = '🔊'; // Icono de altavoz activado
+        } else {
+            audioElement.pause();
+            audioButton.textContent = '🔇'; // Icono de altavoz desactivado
+        }
+    });
+
     const nameForm = document.getElementById('name-form');
     const sobreContainer = document.getElementById('sobreContainer');
     const invitacion = document.getElementById('invitacion');
