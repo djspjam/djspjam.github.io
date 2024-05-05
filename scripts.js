@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(showSlides, 5000); // Change image every 5 seconds
     }
 
-    rsvpForm.addEventListener('submit', function(event) {
+  rsvpForm.addEventListener('submit', function(event) {
         event.preventDefault();
         const guestsNumber = guestsNumberSelect.value;
         const whatsappMessage = `Hola, se confirman ${guestsNumber} asistentes.`;
@@ -96,5 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.open(whatsappUrl, '_blank');
     });
 });
+
 
 
