@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const misaDate = new Date('May 24, 2024 19:00:00').getTime();
     const recepcionDate = new Date('May 24, 2024 20:00:00').getTime();
 
-    const audioElement = document.getElementById('background-audio');
+        const audioElement = document.getElementById('background-audio');
     const audioButton = document.getElementById('audio-control');
 
     audioButton.addEventListener('click', function() {
@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const personalizedElement = document.getElementById('personalized-name');
     const rsvpForm = document.getElementById('rsvp-form');
     const guestsNumberSelect = document.getElementById('guests-number');
-    const guestNameInput = document.getElementById('guest-name'); // Asegúrate de que el ID es correcto.
 
     nameForm.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -73,24 +72,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(updateCountdown, 1000);
 
+    let slideIndex = 0;
+    showSlides();
+
     function showSlides() {
         let slides = document.querySelectorAll('.carousel .slides img');
-        slides.forEach(slide => slide.style.display = "none");
-        slideIndex = (slideIndex + 1) % slides.length;
-        slides[slideIndex].style.display = "block";  
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
         setTimeout(showSlides, 5000); // Change image every 5 seconds
     }
 
-    rsvpForm.addEventListener('submit', function(event) {
+  rsvpForm.addEventListener('submit', function(event) {
         event.preventDefault();
-        const guestName = guestNameInput.value.trim();
         const guestsNumber = guestsNumberSelect.value;
-        const whatsappMessage = `Hola, ${guestName} confirma ${guestsNumber} asistentes.`;
+        const whatsappMessage = `Hola, se confirman ${guestsNumber} asistentes.`;
         const encodedMessage = encodeURIComponent(whatsappMessage);
         const whatsappUrl = `https://wa.me/+525548528300?text=${encodedMessage}`;
         
         window.open(whatsappUrl, '_blank');
     });
-
-    showSlides();
 });
