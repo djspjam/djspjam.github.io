@@ -86,13 +86,19 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(showSlides, 5000); // Change image every 5 seconds
     }
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const rsvpForm = document.getElementById('rsvp-form');
+    const guestsNumberSelect = document.getElementById('guests-number');
+
     rsvpForm.addEventListener('submit', function(event) {
         event.preventDefault();
+        const guestName = document.getElementById('guest-name').value.trim(); 
         const guestsNumber = guestsNumberSelect.value;
-        const whatsappMessage = `Hola, se confirman ${guestsNumber} asistentes.`;
+        const whatsappMessage = `Hola, ${guestName} confirma ${guestsNumber} asistentes.`;
         const encodedMessage = encodeURIComponent(whatsappMessage);
         const whatsappUrl = `https://wa.me/+525548528300?text=${encodedMessage}`;
         
         window.open(whatsappUrl, '_blank');
     });
 });
+
